@@ -4,7 +4,6 @@ from keras.models import Sequential
 from keras.layers import Dense, Embedding, GRU
 from keras import utils
 from keras.preprocessing.sequence import pad_sequences
-
 import numpy as np
 import matplotlib.pyplot as plt
 
