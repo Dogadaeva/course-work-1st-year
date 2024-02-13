@@ -13,13 +13,12 @@ import wget #установить wget
 num_words = 10000
 max_review_len = 100
 #Загрузка набора данных
-#функция wget
-
+file = open('/Users/sofya/Downloads/курсовая/yelp_review_polarity_csv/train.csv', 'r')
 #Просматриваем данные
-#функция head
+print(file)
 
 #Загружаем данные в память
-train = pd.read_csv('yelp_review_polarity_csv/train.csv',
+train = pd.read_csv(file,
                     header=None,
                     names=['Class', 'Review'])
 #Выделяем данные для обучения
@@ -71,9 +70,9 @@ plt.ylabel('Доля верных ответов')
 plt.legend()
 plt.show()
 
-
+filetest = open('/Users/sofya/Downloads/курсовая/yelp_review_polarity_csv/test.csv', 'r')
 #Загружаем набор данных для тестирования
-test = pd.read_csv('yelp_review_polarity_csv/test.csv',
+test = pd.read_csv(filetest,
                     header=None,
                     names=['Class', 'Review'])
 test_sequences = tokenizer.texts_to_sequences(test['Review'])
